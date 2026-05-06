@@ -1,0 +1,1 @@
+const String video = 'assets/videos/scene1.mp4';
