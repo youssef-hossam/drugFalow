@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants/colors.dart';
@@ -16,13 +15,19 @@ class CustomButton extends StatelessWidget {
   String? svgIcon;
   String? iconName;
   Color? color;
-  CustomButton({super.key, required this.btnTitle
-    ,required this.onPressed,this.isLoading = false,
-    this.type = "",this.svgIcon="",this.iconName = "",this.color = primaryDark});
+  CustomButton({
+    super.key,
+    required this.btnTitle,
+    required this.onPressed,
+    this.isLoading = false,
+    this.type = "",
+    this.svgIcon = "",
+    this.iconName = "",
+    this.color = primaryDark,
+  });
 
   @override
   Widget build(BuildContext context) {
-
     return MaterialButton(
       onPressed: onPressed,
       splashColor: Colors.transparent,
@@ -30,20 +35,26 @@ class CustomButton extends StatelessWidget {
       hoverColor: Colors.transparent,
       elevation: 0,
       color: color,
-      height: context.height/16,
+      height: context.height / 20.3,
 
-      padding: EdgeInsets.only(left: 0,bottom: context.height/80,top: context.height/80),
-      shape: RoundedRectangleBorder(borderRadius:
-      BorderRadius.all(Radius.circular(8))),
-      child: isLoading == true ?
-          CircularProgressIndicator(color: white,strokeWidth: 2.0,) :
-
-      Text(btnTitle,style: TextStyles.textStyleNormal14.copyWith(
-        fontWeight: FontWeight.w500,
-        color: white,
-      ),textScaler: TextScaler.linear(1),),
-    
+      padding: EdgeInsets.only(
+        left: 0,
+        bottom: context.height / 80,
+        top: context.height / 80,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+      ),
+      child: isLoading == true
+          ? CircularProgressIndicator(color: white, strokeWidth: 2.0)
+          : Text(
+              btnTitle,
+              style: TextStyles.textStyleNormal14.copyWith(
+                fontWeight: FontWeight.w500,
+                color: white,
+              ),
+              textScaler: TextScaler.linear(1),
+            ),
     );
   }
-  
 }

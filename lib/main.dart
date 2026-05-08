@@ -6,9 +6,9 @@ import 'go_routes.dart';
 
 final GlobalKey<ScaffoldMessengerState> msgKey = GlobalKey();
 final GlobalKey<NavigatorState> navKey = GlobalKey();
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
- // await EasyLocalization.ensureInitialized();
+  // await EasyLocalization.ensureInitialized();
   await di.init();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
@@ -26,16 +26,14 @@ class MyApp extends StatelessWidget {
 
       scaffoldMessengerKey: msgKey,
 
-
       debugShowCheckedModeBanner: false,
 
-    /*  locale: context.locale,
+      /*  locale: context.locale,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,*/
 
       // ❌ REMOVE THIS (GoRouter handles navigation)
       // navigatorKey: navKey,
-
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
