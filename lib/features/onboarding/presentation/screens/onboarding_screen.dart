@@ -1,4 +1,3 @@
-import 'dart:ui' as ui;
 import 'package:drug_flow/core/constants/images.dart';
 import 'package:drug_flow/features/onboarding/presentation/widgets/onboarding_app_bar.dart';
 import 'package:drug_flow/features/onboarding/presentation/widgets/onboarding_description_widget.dart';
@@ -62,7 +61,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     child: PageView(
                       controller: context.read<OnboardingCubit>().controller,
                       padEnds: false,
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const BouncingScrollPhysics(),
                       scrollDirection: Axis.horizontal,
 
                       onPageChanged: (pageInd) {
@@ -99,7 +98,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             BlocBuilder<OnboardingCubit, OnboardingState>(
               builder: (context, state) {
                 return SmoothPageIndicator(
-                  textDirection: ui.TextDirection.ltr,
+                  textDirection: Directionality.of(context),
                   effect: ExpandingDotsEffect(
                     spacing: 8.0,
                     radius: 20.0,

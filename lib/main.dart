@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'injection_container/injection_container.dart' as di;
 import 'core/constants/colors.dart';
 import 'go_routes.dart';
@@ -8,11 +9,18 @@ final GlobalKey<ScaffoldMessengerState> msgKey = GlobalKey();
 final GlobalKey<NavigatorState> navKey = GlobalKey();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await EasyLocalization.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   await di.init();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
-  runApp(const MyApp());
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [Locale('en'), Locale('ar')],
+      path: 'assets/translations',
+      fallbackLocale: const Locale('ar'),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -28,9 +36,9 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
 
-      /*  locale: context.locale,
+      locale: context.locale,
       localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,*/
+      supportedLocales: context.supportedLocales,
 
       // ❌ REMOVE THIS (GoRouter handles navigation)
       // navigatorKey: navKey,
