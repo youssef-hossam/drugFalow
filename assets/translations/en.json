@@ -4,5 +4,12 @@
     "skip": "Skip",
     "arabic": "العربية",
     "english": "English",
-    "change_language": "Change Language"
+    "change_language": "Change Language",
+    "register": "Create Account",
+    "onboarding_title_1": "All drug stores in one place",
+    "onboarding_desc_1": "Browse hundreds of products from multiple stores, compare prices and choose the most suitable for your pharmacy with one click.",
+    "onboarding_title_2": "One order, multiple suppliers",
+    "onboarding_desc_2": "Add products from different stores in one cart, and save your time and effort in managing daily purchases.",
+    "onboarding_title_3": "Exclusive discounts and real-time tracking",
+    "onboarding_desc_3": "Take advantage of available discount coupons, and track the status of your orders from the moment of confirmation to delivery."
 }

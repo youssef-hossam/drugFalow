@@ -5,12 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:go_router/go_router.dart';
 import 'package:drug_flow/core/constants/screens.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OnboardingAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: context.width / 30),
+      margin: EdgeInsets.symmetric(horizontal: 12.5.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -32,15 +33,15 @@ class OnboardingAppBar extends StatelessWidget {
                       ListTile(
                         title: Text(tr("arabic")),
                         onTap: () {
-                          context.setLocale(const Locale('ar'));
                           Navigator.pop(context);
+                          context.setLocale(const Locale('ar'));
                         },
                       ),
                       ListTile(
                         title: Text(tr("english")),
                         onTap: () {
-                          context.setLocale(const Locale('en'));
                           Navigator.pop(context);
+                          context.setLocale(const Locale('en'));
                         },
                       ),
                     ],
@@ -50,8 +51,8 @@ class OnboardingAppBar extends StatelessWidget {
             },
             child: Container(
               padding: EdgeInsets.symmetric(
-                horizontal: context.width / 40,
-                vertical: context.height / 85,
+                horizontal: 9.4.w,
+                vertical: 9.6.h,
               ),
               decoration: BoxDecoration(
                 color: white,

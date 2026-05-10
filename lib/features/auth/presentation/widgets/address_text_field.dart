@@ -5,6 +5,7 @@ import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/styles.dart';
 import '../../../../core/utils/helper.dart';
 import '../../../../core/widgets/svg_handler.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddressTextField extends StatefulWidget {
   AddressTextField({super.key, required this.controller,required this.obscure,
@@ -43,7 +44,7 @@ class _AddressTextFieldState extends State<AddressTextField> {
             fontWeight: FontWeight.w600,
             color: color121217
         ),textScaler: TextScaler.linear(1),),
-        SizedBox(height: context.height/140,),
+        SizedBox(height: 5.8.h,),
         MediaQuery(data: MediaQueryData(textScaler: TextScaler.linear(1)),
           child: TextFormField(
             autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -75,13 +76,13 @@ class _AddressTextFieldState extends State<AddressTextField> {
                 onTap: widget.onTap!,
                 child: Container(
                     alignment: Alignment.center,
-                    width: context.width/20,
+                    width: 18.8.w,
                     child: widget.visible == true ?
                     Icon(Icons.visibility_off_outlined,color: color818984,):
                     Icon(Icons.visibility_outlined,color: color818984,)
                 ),
               ) :
-              SizedBox(width: context.width/30,),
+              SizedBox(width: 12.5.w,),
               filled: true,
               errorStyle: TextStyles.textStyleNormal10.copyWith(color: Colors.red,
               ),

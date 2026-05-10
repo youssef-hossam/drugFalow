@@ -6,6 +6,7 @@ import '../constants/colors.dart';
 import '../constants/images.dart';
 import '../constants/styles.dart';
 import '../utils/helper.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SearchFieldTxt extends StatefulWidget{
   final TextEditingController searchController;
@@ -37,10 +38,10 @@ class _SearchFieldTxt  extends State<SearchFieldTxt>{
               color: color6C6C89,
             ),
             prefixIcon: Container(
-              width: context.width/28,
+              width: 13.4.w,
               alignment: Alignment.center,
-              child: customSvg(name: search,width: context.width/30,
-                  height: context.height/30,fit: BoxFit.cover),
+              child: customSvg(name: search,width: 12.5.w,
+                  height: 27.1.h,fit: BoxFit.cover),
             ),
 
             // ❌ clear icon (only behavior added)

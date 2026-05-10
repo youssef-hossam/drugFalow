@@ -3,6 +3,7 @@ import 'package:drug_flow/core/constants/styles.dart';
 import 'package:drug_flow/core/utils/helper.dart';
 import 'package:drug_flow/core/widgets/svg_handler.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class UploadItemWidget extends StatelessWidget{
   final String img;
@@ -20,18 +21,18 @@ class UploadItemWidget extends StatelessWidget{
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          width: context.width/5.0,
-          height: context.height/10,
+          width: 75.w,
+          height: 81.2.h,
           alignment: Alignment.center,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
               color: colorD1d1dB
             )),
-          child: customSvg(name: img,width: context.width/15,
-          height: context.height/15,fit: BoxFit.cover),
+          child: customSvg(name: img,width: 25.w,
+          height: 54.1.h,fit: BoxFit.cover),
         ),
-        SizedBox(width: context.width/30,),
+        SizedBox(width: 12.5.w,),
         Expanded(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -41,7 +42,7 @@ class UploadItemWidget extends StatelessWidget{
               Text(title,style: TextStyles.textStyleNormal14.copyWith(
                 fontWeight: FontWeight.w600
               ),textScaler: TextScaler.linear(1),),
-              SizedBox(height: context.height/90,),
+              SizedBox(height: 9.h,),
               Text(description,style: TextStyles.textStyleNormal11.copyWith(
                 color: color6C6C89,
                   fontWeight: FontWeight.w600

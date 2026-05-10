@@ -5,6 +5,7 @@ import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/styles.dart';
 import '../../../../core/utils/helper.dart';
 import '../../../../core/widgets/svg_handler.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CouponCodeText extends StatefulWidget{
   final TextEditingController couponCodeController;
@@ -40,9 +41,9 @@ class _CouponCodeText extends State<CouponCodeText> {
 
 // ❌ clear icon (only behavior added)
             suffixIcon: Container(
-              padding: EdgeInsets.symmetric(horizontal: context.width/30),
-              margin: EdgeInsets.symmetric(horizontal: context.width/30),
-              width: context.width/6,
+              padding: EdgeInsets.symmetric(horizontal: 12.5.w),
+              margin: EdgeInsets.symmetric(horizontal: 12.5.w),
+              width: 62.5.w,
               decoration: BoxDecoration(
                   color: colorCCE5EC,
                   borderRadius: BorderRadius.circular(12)

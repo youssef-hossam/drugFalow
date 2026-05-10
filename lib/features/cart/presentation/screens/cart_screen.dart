@@ -8,6 +8,7 @@ import 'package:drug_flow/features/cart/presentation/widgets/current_request_car
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CartScreen extends StatefulWidget{
   @override
@@ -30,14 +31,14 @@ class _CartScreenState extends State<CartScreen> with SingleTickerProviderStateM
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: context.height/30,),
+          SizedBox(height: 27.1.h,),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: context.width/30),
+            margin: EdgeInsets.symmetric(horizontal: 12.5.w),
             child: Text("سلة المشتريات",style: TextStyles.textStyleBold20.copyWith(
               color: color121217
             ),textScaler: TextScaler.linear(1),),
           ),
-          SizedBox(height: context.height/20,),
+          SizedBox(height: 40.6.h,),
           Center(
             child: BlocBuilder<CartItemsCubit, CartItemsState>(
               builder: (context, state) {
@@ -52,7 +53,7 @@ class _CartScreenState extends State<CartScreen> with SingleTickerProviderStateM
                   indicatorSize: TabBarIndicatorSize.tab,
                   tabs: [
                     Tab(
-                      height: context.height/10,
+                      height: 81.2.h,
                       child: Container(
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
@@ -65,8 +66,8 @@ class _CartScreenState extends State<CartScreen> with SingleTickerProviderStateM
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            customSvg(name: orders,width: context.width/30,
-                            height: context.height/30,fit: BoxFit.cover,
+                            customSvg(name: orders,width: 12.5.w,
+                            height: 27.1.h,fit: BoxFit.cover,
                             color: context.read<CartItemsCubit>().tabController!.index ==0 ?
                             white: primaryDark),
                             Text("Current Requests",style: TextStyles.textStyleNormal16.copyWith(
@@ -77,7 +78,7 @@ class _CartScreenState extends State<CartScreen> with SingleTickerProviderStateM
                         ),
                       ),
                     ),
-                    Tab(height: context.height/10,
+                    Tab(height: 81.2.h,
                       child: Container(
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
@@ -90,8 +91,8 @@ class _CartScreenState extends State<CartScreen> with SingleTickerProviderStateM
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            customSvg(name: bookmark,width: context.width/30,
-                                height: context.height/30,fit: BoxFit.cover,
+                            customSvg(name: bookmark,width: 12.5.w,
+                                height: 27.1.h,fit: BoxFit.cover,
                                 color: context.read<CartItemsCubit>().tabController!.index ==1 ?
                                 white: primaryDark),
                             Text("Saved for later",style: TextStyles.textStyleNormal16.copyWith(

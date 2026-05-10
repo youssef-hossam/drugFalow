@@ -10,6 +10,7 @@ import '../../local/auth_local_data_source.dart';
 import '../../utils/helper.dart';
 import '../back_to_login_alert.dart';
 import '../svg_handler.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FavouriteButton extends StatefulWidget {
   final bool isFavourite;
@@ -84,14 +85,14 @@ class _FavouriteButtonState extends State<FavouriteButton> {
               ? Container(
             width: widget.width,
             height: widget.height,
-            margin: EdgeInsets.symmetric(horizontal: context.width / 50
-                ,vertical: context.height/80),
+            margin: EdgeInsets.symmetric(horizontal: 7.5.w
+                ,vertical: 10.2.h),
             child: SpinKitPulse(color: white, size: 20),
           )
               : isFav
               ? Container(
-            width: context.width/15,
-            height: context.height/21,
+            width: 25.w,
+            height: 38.7.h,
             alignment: Alignment.center,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
@@ -99,22 +100,22 @@ class _FavouriteButtonState extends State<FavouriteButton> {
             child: customSvg(
               name: favouriteFill,
               color: colorF83D39,
-              width: context.width / 50,
-              height: context.height / 50,
+              width: 7.5.w,
+              height: 16.2.h,
               fit: BoxFit.cover,
             ),
           )
               : Container(
-            width: context.width/15,
-            height: context.height/21,
+            width: 25.w,
+            height: 38.7.h,
             alignment: Alignment.center,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
             ),
             child: customSvg(
               name: favourite,
-              width: context.width / 50,
-              height: context.height / 50,
+              width: 7.5.w,
+              height: 16.2.h,
               color: white,
               fit: BoxFit.cover,
             ),

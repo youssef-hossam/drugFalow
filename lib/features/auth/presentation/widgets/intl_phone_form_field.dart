@@ -10,6 +10,7 @@ import 'package:intl_phone_field/intl_phone_field.dart';
 
 import 'package:easy_localization/easy_localization.dart';
 import '../../../../core/widgets/svg_handler.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class IntlPhoneFormField extends StatefulWidget{
   final TextEditingController? controller;
@@ -48,7 +49,7 @@ class _IntlPhoneFormField extends State<IntlPhoneFormField> {
 
             color: color121217
         ),textScaler: TextScaler.linear(1),),
-        SizedBox(height: context.height/120,),
+        SizedBox(height: 6.8.h,),
         MediaQuery(data: MediaQueryData(textScaler: TextScaler.linear(1)),
           child: IntlPhoneField(
             autovalidateMode: AutovalidateMode.onUserInteraction,

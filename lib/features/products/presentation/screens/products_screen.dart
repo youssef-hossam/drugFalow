@@ -13,6 +13,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/utils/helper.dart';
 import '../../../../core/widgets/search_field_txt.dart';
 import '../../../../core/widgets/silver_grid_delegate_with_fixed_axis_count/silver_grid_delegate_with_fixed_axis_count.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductsScreen extends StatefulWidget{
   @override
@@ -35,18 +36,18 @@ class _ProductsScreenState extends State<ProductsScreen> with SingleTickerProvid
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: context.height/70,),
+          SizedBox(height: 11.6.h,),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: context.width/30),
+            margin: EdgeInsets.symmetric(horizontal: 12.5.w),
             child: Text("المنتجات",style: TextStyles.textStyleBold20.copyWith(
               color: color121217
             ),textScaler: TextScaler.linear(1),),
           ),
-          SizedBox(height: context.height/50,),
+          SizedBox(height: 16.2.h,),
           SearchFieldTxt(searchController: searchController),
-          SizedBox(height: context.height/50,),
+          SizedBox(height: 16.2.h,),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: context.width/20),
+            margin: EdgeInsets.symmetric(horizontal: 18.8.w),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,7 +68,7 @@ class _ProductsScreenState extends State<ProductsScreen> with SingleTickerProvid
                         ]
 
                     )),
-                SizedBox(height: context.height/25,),
+                SizedBox(height: 32.5.h,),
                 SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child:
@@ -77,7 +78,7 @@ class _ProductsScreenState extends State<ProductsScreen> with SingleTickerProvid
                         children: [
                           Container(
                             padding: EdgeInsets.symmetric(horizontal: 0),
-                            height: context.height/15,
+                            height: 54.1.h,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12),
                               border: Border.all(
@@ -99,15 +100,15 @@ class _ProductsScreenState extends State<ProductsScreen> with SingleTickerProvid
                                             context.read<ProductsCubit>().updateTabIndex(ind: 0);
                                           },
                                           child: Container(
-                                            width:context.width/7,
+                                            width:53.6.w,
                                             decoration: BoxDecoration(
                                               color: context.read<ProductsCubit>().index == 0?
                                               colorF7F7F8: white,
 
                                             ),
                                             alignment:Alignment.center,
-                                            child: customSvg(name: menu,width: context.width/30
-                                                ,height: context.height/30,fit: BoxFit.cover,
+                                            child: customSvg(name: menu,width: 12.5.w
+                                                ,height: 27.1.h,fit: BoxFit.cover,
                                                 color:  context.read<ProductsCubit>().index == 0?
                                                 primaryDark :color8A8AA3),
                                           ),
@@ -122,15 +123,15 @@ class _ProductsScreenState extends State<ProductsScreen> with SingleTickerProvid
                                             context.read<ProductsCubit>().updateTabIndex(ind: 1);
                                           },
                                           child: Container(
-                                            width:context.width/7,
+                                            width:53.6.w,
                                             alignment:Alignment.center,
                                             decoration: BoxDecoration(
                                               color:  context.read<ProductsCubit>().index == 1?
                                               colorF7F7F8: white,
                                             ),
 
-                                            child: customSvg(name: grid,width: context.width/30
-                                                ,height: context.height/30,fit: BoxFit.cover,
+                                            child: customSvg(name: grid,width: 12.5.w
+                                                ,height: 27.1.h,fit: BoxFit.cover,
                                                 color:  context.read<ProductsCubit>().index == 1?
                                                 primaryDark :color8A8AA3),
                                           ),
@@ -142,12 +143,12 @@ class _ProductsScreenState extends State<ProductsScreen> with SingleTickerProvid
                               },
                             ),
                           ),
-                          SizedBox(width: context.width/40,),
+                          SizedBox(width: 9.4.w,),
                            Row(
                                 children: [
                                   Container(
-                                    padding: EdgeInsets.symmetric(horizontal: context.width/30,
-                                        vertical: context.height/50),
+                                    padding: EdgeInsets.symmetric(horizontal: 12.5.w,
+                                        vertical: 16.2.h),
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(12),
                                         border: Border.all(
@@ -160,23 +161,23 @@ class _ProductsScreenState extends State<ProductsScreen> with SingleTickerProvid
                                       children: [
                                         Container(
                                           alignment:Alignment.center,
-                                          child: customSvg(name: arrows,width: context.width/50
-                                              ,height: context.height/50,fit: BoxFit.cover),
+                                          child: customSvg(name: arrows,width: 7.5.w
+                                              ,height: 16.2.h,fit: BoxFit.cover),
                                         ),
-                                        SizedBox(width: context.width/50,),
+                                        SizedBox(width: 7.5.w,),
                                         Text("ترتيب حسب",style: TextStyles.textStyleNormal14.copyWith(
                                             color: color121217
                                         ),textScaler: TextScaler.linear(1),)
                                       ],
                                     ),
                                   ),
-                                  SizedBox(width: context.width/40,),
+                                  SizedBox(width: 9.4.w,),
                                   ProductsFilterItem(title:"الدواء"),
-                                  SizedBox(width: context.width/40,),
+                                  SizedBox(width: 9.4.w,),
                                   ProductsFilterItem(title:"المادة الفعالة")
 
                                 ],)])),],),),
-          SizedBox(height: context.height/30,),
+          SizedBox(height: 27.1.h,),
           Expanded(child: BlocBuilder<ProductsCubit, ProductsState>(
             builder: (context, state) {
     return TabBarView(
@@ -185,8 +186,8 @@ class _ProductsScreenState extends State<ProductsScreen> with SingleTickerProvid
               children: [
                 ListView.builder(
                     shrinkWrap: true,
-                    padding: EdgeInsets.symmetric(vertical: context.height/50,
-                        horizontal: context.width/30),
+                    padding: EdgeInsets.symmetric(vertical: 16.2.h,
+                        horizontal: 12.5.w),
                     itemCount: 8,
                     physics: ClampingScrollPhysics(),
                     scrollDirection: Axis.vertical,
@@ -195,9 +196,9 @@ class _ProductsScreenState extends State<ProductsScreen> with SingleTickerProvid
                 shrinkWrap: true,
                     itemCount: 12,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCountAndFixedHeight(
-                    height: context.height/1.9,
-                    crossAxisSpacing: context.width/70,
-                    mainAxisSpacing: context.height/80,
+                    height: 427.4.h,
+                    crossAxisSpacing: 5.4.w,
+                    mainAxisSpacing: 10.2.h,
                     crossAxisCount: 2),
                     itemBuilder: (context,index)=>ProductGridItem())
 

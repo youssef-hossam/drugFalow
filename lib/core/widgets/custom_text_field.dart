@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../constants/styles.dart';
 import '../utils/helper.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextField extends StatefulWidget {
   CustomTextField({super.key, required this.controller,required this.obscure,
@@ -42,7 +43,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
            fontWeight: FontWeight.w600,
             color: color121217
         ),textScaler: TextScaler.linear(1),),
-        SizedBox(height: context.height/140,),
+        SizedBox(height: 5.8.h,),
         MediaQuery(data: MediaQueryData(textScaler: TextScaler.linear(1)),
           child: TextFormField(
             autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -66,10 +67,10 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
 
               prefixIcon:Container(
-                width: widget.type == 'address' ?0 : context.width/34,
+                width: widget.type == 'address' ?0 : 11.w,
                 alignment: Alignment.center,
                 child: customSvg(name: widget.svgIcon,fit: BoxFit.cover,
-                    width: context.width/40,height: context.height/40,color: color818984),
+                    width: 9.4.w,height: 20.3.h,color: color818984),
               ),
 
               suffixIcon: widget.type == "pass" ?
@@ -81,13 +82,13 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 onTap: widget.onTap!,
                 child: Container(
                     alignment: Alignment.center,
-                    width: context.width/20,
+                    width: 18.8.w,
                     child: widget.visible == true ?
                     Icon(Icons.visibility_off_outlined,color: color818984,):
                     Icon(Icons.visibility_outlined,color: color818984,)
                 ),
               ) :
-              SizedBox(width: context.width/30,),
+              SizedBox(width: 12.5.w,),
               filled: true,
               errorStyle: TextStyles.textStyleNormal10.copyWith(color: Colors.red,
                   ),

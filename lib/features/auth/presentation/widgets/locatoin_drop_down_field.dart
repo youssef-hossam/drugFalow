@@ -5,6 +5,7 @@ import '../../../../core/constants/images.dart';
 import '../../../../core/constants/styles.dart';
 import '../../../../core/utils/helper.dart';
 import '../../../../core/widgets/svg_handler.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LocationDropDownFormField extends StatefulWidget{
   final String hintText ;
@@ -34,7 +35,7 @@ class LocationDropDownFormFieldState extends State<LocationDropDownFormField> {
         Text(widget.title,style: TextStyles.textStyleNormal14.copyWith(
             color: color121217,
         ),textScaler: TextScaler.linear(1),),
-        SizedBox(height: context.height/80,),
+        SizedBox(height: 10.2.h,),
         DropdownButtonFormField(
             initialValue: 1/*widget.type == "sub" ?
             widget.subCategoriesList!.first.id:
@@ -49,10 +50,10 @@ class LocationDropDownFormFieldState extends State<LocationDropDownFormField> {
 
             icon: Container(
               alignment: Alignment.center,
-              width: context.width/10,
+              width: 37.5.w,
               child: customSvg(name: dropdown
-                  ,    color: colorD1d1dB,width: context.width/90
-                  ,height: context.height/80,fit: BoxFit.cover),
+                  ,    color: colorD1d1dB,width: 4.2.w
+                  ,height: 10.2.h,fit: BoxFit.cover),
             ),
             borderRadius: BorderRadius.circular(8),
             decoration: InputDecoration(

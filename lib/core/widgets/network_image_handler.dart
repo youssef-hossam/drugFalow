@@ -6,6 +6,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import '../constants/colors.dart';
 import '../utils/helper.dart';
 import 'image_handler.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 class NetWorkImageHandler extends StatelessWidget {
   final String image;
   final double width;
@@ -25,7 +26,7 @@ class NetWorkImageHandler extends StatelessWidget {
       },
       errorWidget: (context,string,object)=>Container(
         alignment: Alignment.center,
-          padding: EdgeInsets.all(context.width/25),
+          padding: EdgeInsets.all(15.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(20)),
             border:Border.all(color: primaryDark.withOpacity(.2))

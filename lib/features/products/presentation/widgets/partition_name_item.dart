@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/styles.dart';
 import '../../../../core/utils/helper.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PartitionNameItem extends StatelessWidget{
   final String title;
@@ -12,8 +13,8 @@ class PartitionNameItem extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: context.width/50,
-          vertical: context.height/60),
+      padding: EdgeInsets.symmetric(horizontal: 7.5.w,
+          vertical: 13.5.h),
       decoration: BoxDecoration(
         color: colorF7F7F8,
         borderRadius: BorderRadius.circular(12),

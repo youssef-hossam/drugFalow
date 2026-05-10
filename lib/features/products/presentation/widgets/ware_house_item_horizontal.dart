@@ -5,12 +5,13 @@ import 'package:drug_flow/core/widgets/image_handler.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../../../../core/constants/styles.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WareHouseItemHorizontal extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: context.width/30),
+      margin: EdgeInsets.symmetric(horizontal: 12.5.w),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -25,10 +26,10 @@ class WareHouseItemHorizontal extends StatelessWidget{
             ),
             child: ClipOval(
               child: ImageHandler(img: ware1,
-                  width: context.width/6, height: context.width/6),
+                  width: 62.5.w, height: 62.5.w),
             ),
           ),
-          SizedBox(height: context.height/60,),
+          SizedBox(height: 13.5.h,),
           Text("الريان فارم",style: TextStyles.textStyleNormal13.copyWith(
               color: color6C6C89,
               fontWeight: FontWeight.w500

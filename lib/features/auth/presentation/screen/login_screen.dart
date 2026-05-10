@@ -15,13 +15,15 @@ import '../../../../core/widgets/custom_text_field.dart';
 import '../cubit/login/login_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import '../widgets/intl_phone_form_field.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatefulWidget{
+class LoginScreen extends StatefulWidget {
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStateMixin {
+class _LoginScreenState extends State<LoginScreen>
+    with SingleTickerProviderStateMixin {
   final TextEditingController mailController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController countryCodeController = TextEditingController();
@@ -32,178 +34,227 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
     context.read<LoginCubit>().setTabController(ticker: this);
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-
-        child: Scaffold(
-          backgroundColor: white,
-          resizeToAvoidBottomInset: true,
+    return Scaffold(
+      backgroundColor: white,
+      resizeToAvoidBottomInset: true,
       appBar: customAppBar(context: context),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: context.height/33,),
+            SizedBox(height: 13.5.h),
             Container(
               alignment: Alignment.center,
-              child: customSvg(name: login,height: context.height/10,
-              width: context.width/10,fit: BoxFit.cover),
+              child: customSvg(
+                name: login,
+                height: 58.h,
+                width: 26.8.w,
+                fit: BoxFit.cover,
+              ),
             ),
-            SizedBox(height: context.height/30,),
+            SizedBox(height: 16.2.h),
             Center(
-              child: Text("أهلا بعودتك",style: TextStyles.textStyleBold34.copyWith(
-                color: color121217
-              ),textScaler: TextScaler.linear(1),),
+              child: Text(
+                "أهلا بعودتك",
+                style: TextStyles.textStyleBold34.copyWith(color: color121217),
+                textScaler: TextScaler.linear(1),
+              ),
             ),
-            SizedBox(height: context.height/55,),
+            SizedBox(height: 11.6.h),
             Center(
-              child: Text("سجل الدخول لحسابك بإستخدام البريد الإلكتروني او رقم الهاتف",style: TextStyles.textStyleNormal12.copyWith(
-                  color: color6C6C89
-              ),textScaler: TextScaler.linear(1),),
+              child: Text(
+                "سجل الدخول لحسابك بإستخدام البريد الإلكتروني او رقم الهاتف",
+                style: TextStyles.textStyleNormal12.copyWith(
+                  color: color6C6C89,
+                ),
+                textScaler: TextScaler.linear(1),
+              ),
             ),
-            SizedBox(height: context.height/30,),
-            BlocBuilder<LoginCubit,LoginState>(builder: (context,state)=>
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: context.width/30),
-                  width: double.infinity,
-                  child: TabBar(
-                      controller: context.read<LoginCubit>().tabController,
-                      indicatorColor: primaryDark,
-                      dividerColor: color8A8AA3.withOpacity(.1),
-                      textScaler: TextScaler.linear(1),
-                      labelPadding: EdgeInsets.symmetric(horizontal: context.width/80),
-                      padding: EdgeInsets.zero,
-                      indicatorSize: TabBarIndicatorSize.tab,
-
-                      isScrollable: false,
-                      onTap: (int val){
-                        context.read<LoginCubit>().updateTabState(val: val);
-
-                      },
-                      tabs: [
-                        Tab(child: Text(tr("mail"),
-                          style: TextStyles.textStyleNormal14.copyWith(
-                            color: context.read<LoginCubit>().ind == 0 ?
-                            primaryDark :
-                            color6C6C89
-                          ),
-                          textScaler: TextScaler.linear(1),),),
-                        Tab(child: Text(tr("phone"),
-                          style: TextStyles.textStyleNormal14.copyWith(
-                              color: context.read<LoginCubit>().ind == 1 ?
-                              primaryDark :color6C6C89
-                          ),
-                          textScaler: TextScaler.linear(1),),),
-
-                      ]),
-                )),
-            SizedBox(height: context.height/27,),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: context.width/20),
-              height: context.height/6.3,
-              child: TabBarView(
-                  physics: NeverScrollableScrollPhysics(),
+            SizedBox(height: 16.2.h),
+            BlocBuilder<LoginCubit, LoginState>(
+              builder: (context, state) => Container(
+                margin: EdgeInsets.symmetric(horizontal: 12.5.w),
+                width: double.infinity,
+                child: TabBar(
                   controller: context.read<LoginCubit>().tabController,
-                  children: [
-                    SizedBox(
-                      child: CustomTextField(controller: mailController,
-                        hintTxt: ""
-                        , svgIcon: mail,obscure: false,
-                        textInputType: TextInputType.text,
-                        validator: (val){
-                          if(mailController.text.isEmpty&& phoneController.text.isEmpty) {
-                            return tr("field_required");
-                          }else {
-                            return null;
-                          }
-                        }, title: tr("mail"),),
-                    ),
-                    SizedBox(
-                      child: IntlPhoneFormField(
-                        countryCodeController: countryCodeController,
-                        controller: phoneController, hintTxt: "+20 10 1234567"
-                        ,type: "phone"
-                        , obscure: false,
-                        validator: (val){
-                          if(mailController.text.isEmpty && phoneController.text.isEmpty) {
-                            return tr("field_required");
-                          }else {
-                            return null;
-                          }
-                        },
-        
-                        textInputType: TextInputType.number, title: tr("phone"),),
-                    ),
-                  ]),),
+                  indicatorColor: primaryDark,
+                  dividerColor: color8A8AA3.withOpacity(.1),
+                  textScaler: TextScaler.linear(1),
+                  labelPadding: EdgeInsets.symmetric(
+                    horizontal: 4.7.w,
+                  ),
+                  padding: EdgeInsets.zero,
+                  indicatorSize: TabBarIndicatorSize.tab,
 
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: context.width/20),
-              child: CustomTextField(controller: passwordController,
-                hintTxt: ""
-                , svgIcon: knock,obscure: false,
-                textInputType: TextInputType.text,
-                validator: (val){
-                  if(passwordController.text.isEmpty) {
-                    return tr("field_required");
-                  }else {
-                    return null;
-                  }
-                }, title: tr("password"),),
+                  isScrollable: false,
+                  onTap: (int val) {
+                    context.read<LoginCubit>().updateTabState(val: val);
+                  },
+                  tabs: [
+                    Tab(
+                      child: Text(
+                        tr("mail"),
+                        style: TextStyles.textStyleNormal14.copyWith(
+                          color: context.read<LoginCubit>().ind == 0
+                              ? primaryDark
+                              : color6C6C89,
+                        ),
+                        textScaler: TextScaler.linear(1),
+                      ),
+                    ),
+                    Tab(
+                      child: Text(
+                        tr("phone"),
+                        style: TextStyles.textStyleNormal14.copyWith(
+                          color: context.read<LoginCubit>().ind == 1
+                              ? primaryDark
+                              : color6C6C89,
+                        ),
+                        textScaler: TextScaler.linear(1),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-            SizedBox(height: context.height/45,),
+            SizedBox(height: 20.3.h),
             Container(
-              alignment: Alignment.center,
-              margin: EdgeInsets.symmetric(horizontal: context.width/40),
-              child: Row(
+              margin: EdgeInsets.symmetric(horizontal: 18.8.w),
+              height: 108.3.h,
+              child: TabBarView(
+                physics: NeverScrollableScrollPhysics(),
+                controller: context.read<LoginCubit>().tabController,
                 children: [
-                  Expanded(child: RemmeberMeWidget()),
-                  InkWell(onTap: (){},
-                  child: Text("نسيت كلمة المرور؟",
-                  style: TextStyles.textStyleNormal12.copyWith(
-                    color: color8A8AA3
-                  ),textScaler: TextScaler.linear(1),),)
+                  SizedBox(
+                    child: CustomTextField(
+                      controller: mailController,
+                      hintTxt: "",
+                      svgIcon: mail,
+                      obscure: false,
+                      textInputType: TextInputType.text,
+                      validator: (val) {
+                        if (mailController.text.isEmpty &&
+                            phoneController.text.isEmpty) {
+                          return tr("field_required");
+                        } else {
+                          return null;
+                        }
+                      },
+                      title: tr("mail"),
+                    ),
+                  ),
+                  SizedBox(
+                    child: IntlPhoneFormField(
+                      countryCodeController: countryCodeController,
+                      controller: phoneController,
+                      hintTxt: "+20 10 1234567",
+                      type: "phone",
+                      obscure: false,
+                      validator: (val) {
+                        if (mailController.text.isEmpty &&
+                            phoneController.text.isEmpty) {
+                          return tr("field_required");
+                        } else {
+                          return null;
+                        }
+                      },
+
+                      textInputType: TextInputType.number,
+                      title: tr("phone"),
+                    ),
+                  ),
                 ],
               ),
             ),
-            SizedBox(height: context.height/25,),
+
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 18.8.w),
+              child: CustomTextField(
+                controller: passwordController,
+                hintTxt: "",
+                svgIcon: knock,
+                obscure: false,
+                textInputType: TextInputType.text,
+                validator: (val) {
+                  if (passwordController.text.isEmpty) {
+                    return tr("field_required");
+                  } else {
+                    return null;
+                  }
+                },
+                title: tr("password"),
+              ),
+            ),
+            SizedBox(height: 13.5.h),
+            Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.symmetric(horizontal: 9.4.w),
+              child: Row(
+                children: [
+                  Expanded(child: RemmeberMeWidget()),
+                  InkWell(
+                    onTap: () {},
+                    child: Text(
+                      "نسيت كلمة المرور؟",
+                      style: TextStyles.textStyleNormal12.copyWith(
+                        color: color8A8AA3,
+                      ),
+                      textScaler: TextScaler.linear(1),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20.3.h),
             Container(
               width: double.infinity,
-              margin: EdgeInsets.symmetric(horizontal: context.width/15),
-              child: CustomButton(btnTitle: tr("تسجيل دخـول")
-                  , onPressed: (){
-                context.push(bottomBarSc);
-                  }),
+              margin: EdgeInsets.symmetric(horizontal: 16.w),
+              child: CustomButton(
+                btnTitle: tr("تسجيل دخـول"),
+                onPressed: () {
+                  context.push(bottomBarSc);
+                },
+              ),
             ),
-            SizedBox(height: context.height/10,),
+            SizedBox(height: 40.6.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text("ليس لديك حساب؟ ",
+                Text(
+                  "ليس لديك حساب؟ ",
                   style: TextStyles.textStyleNormal12.copyWith(
-                      color: color8A8AA3
-                  ),textScaler: TextScaler.linear(1),),
-                SizedBox(height: context.width/30,),
+                    color: color8A8AA3,
+                  ),
+                  textScaler: TextScaler.linear(1),
+                ),
+                SizedBox(height: 12.5.w),
                 InkWell(
-                  onTap: (){
+                  onTap: () {
                     context.push(registerSc);
                   },
-                  child: Text("انشاء حساب",
+                  child: Text(
+                    "انشاء حساب",
                     style: TextStyles.textStyleNormal12.copyWith(
-                        color: primaryDark,
+                      color: primaryDark,
                       decoration: TextDecoration.underline,
                       decorationColor: primaryDark,
-                      fontWeight: FontWeight.w600
-                    ),textScaler: TextScaler.linear(1),),
-                )
-              ],),
-            SizedBox(height: context.height/20,)
+                      fontWeight: FontWeight.w600,
+                    ),
+                    textScaler: TextScaler.linear(1),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 27.1.h),
           ],
         ),
       ),
-    ));
+    );
   }
 }

@@ -9,34 +9,69 @@ import '../constants/fonts.dart';
 import '../constants/images.dart';
 import '../constants/styles.dart';
 import '../utils/helper.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-AppBar customAppBar({BuildContext? context}){
-
+AppBar customAppBar({required BuildContext context}) {
   return AppBar(
-    toolbarHeight: context!.height/12,
+    toolbarHeight: 64.h,
     backgroundColor: white,
     surfaceTintColor: white,
 
     centerTitle: true,
     actions: [
-      Container(
-        margin: EdgeInsets.symmetric(horizontal: context.width/30),
-        padding: EdgeInsets.symmetric(horizontal: context.width/27,
-            vertical: context.height/81),
-        decoration: BoxDecoration(
+      InkWell(
+        onTap: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (context) => Container(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    tr("change_language"),
+                    style: TextStyles.textStyleNormal16,
+                  ),
+                  const SizedBox(height: 16),
+                  ListTile(
+                    title: Text(tr("arabic")),
+                    onTap: () {
+                      context.setLocale(const Locale('ar'));
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: Text(tr("english")),
+                    onTap: () {
+                      context.setLocale(const Locale('en'));
+                      Navigator.pop(context);
+                    },
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 12.5.w),
+          padding: EdgeInsets.symmetric(horizontal: 13.9.w, vertical: 10.h),
+          decoration: BoxDecoration(
             color: white,
             borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: colorD1d1dB,width: 1.0)
+            border: Border.all(color: colorD1d1dB, width: 1.0),
+          ),
+          child: Text(
+            context.locale.languageCode == 'ar' ? tr("arabic") : tr("english"),
+            style: TextStyles.textStyleNormal13.copyWith(color: color121217),
+            textScaler: TextScaler.linear(1),
+          ),
         ),
-        child: Text("العربية",style: TextStyles.textStyleNormal13.copyWith(
-            color: color121217
-        ),textScaler: TextScaler.linear(1),),
       ),
     ],
     leading: InkWell(
       splashFactory: NoSplash.splashFactory,
       overlayColor: MaterialStateProperty.all(Colors.transparent),
-      onTap: (){
+      onTap: () {
         final router = GoRouter.of(context);
 
         if (router.canPop()) {
@@ -46,11 +81,15 @@ AppBar customAppBar({BuildContext? context}){
         }
       },
       child: Container(
-          alignment: Alignment.center,
+        alignment: Alignment.center,
 
-          child: customSvg(name: back,fit: BoxFit.cover,width: context.width/39,
-                height: context.height/39),
-          )
+        child: customSvg(
+          name: back,
+          fit: BoxFit.cover,
+          width: 9.6.w,
+          height: 20.8.h,
+        ),
+      ),
     ),
   );
 }

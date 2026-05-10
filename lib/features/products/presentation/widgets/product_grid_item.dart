@@ -6,12 +6,13 @@ import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/images.dart';
 import '../../../../core/constants/styles.dart';
 import '../../../../core/widgets/image_handler.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ProductGridItem extends StatelessWidget{
+class ProductGridItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: context.width,
+      width: 175.w,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -20,33 +21,40 @@ class ProductGridItem extends StatelessWidget{
           Center(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: ImageHandler(img: panadol, width: context.width/3.5
-                  , height: context.height/5),
+              child: ImageHandler(
+                img: panadol,
+                width: 107.1.w,
+                height: 162.4.h,
+              ),
             ),
           ),
-          SizedBox(height: context.height/80,),
-          Text("بانادول اكسترا اوبتيزورب لتخفيف إضافي مسكن فعال للألم والحمي | 24 قرص",
-            style: TextStyles.textStyleNormal13.copyWith(
-                color: color121217,
-            ),textScaler: TextScaler.linear(1),textAlign: TextAlign.start,
-          maxLines: 2,overflow: TextOverflow.ellipsis,),
-          SizedBox(height: context.height/50,),
-          Text("اسم القسم",style: TextStyles.textStyleNormal11.copyWith(
-              color: color6C6C89
-          ),textScaler: TextScaler.linear(1),),
-          SizedBox(height: context.height/90,),
+          SizedBox(height: 10.2.h),
+          Text(
+            "بانادول اكسترا اوبتيزورب لتخفيف إضافي مسكن فعال للألم والحمي | 24 قرص",
+            style: TextStyles.textStyleNormal13.copyWith(color: color121217),
+            textScaler: TextScaler.linear(1),
+            textAlign: TextAlign.start,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+          SizedBox(height: 16.2.h),
+          Text(
+            "اسم القسم",
+            style: TextStyles.textStyleNormal11.copyWith(color: color6C6C89),
+            textScaler: TextScaler.linear(1),
+          ),
+          SizedBox(height: 9.h),
           Row(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               PartitionNameItem(title: "Paracetamol"),
-              SizedBox(width: context.width/30,),
+              SizedBox(width: 12.5.w),
               PartitionNameItem(title: "Caffeine"),
-
             ],
           ),
-          SizedBox(height: context.height/180,),
+          SizedBox(height: 4.5.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -54,68 +62,92 @@ class ProductGridItem extends StatelessWidget{
             children: [
               Container(
                 decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                        color: colorF7F7F8
-                    ),
-                    color: colorF7F7F8
+                  shape: BoxShape.circle,
+                  border: Border.all(color: colorF7F7F8),
+                  color: colorF7F7F8,
                 ),
                 alignment: Alignment.center,
                 child: ClipOval(
-                  child: ImageHandler(img: ware1
-                      , width: context.width/10, height: context.width/10),
+                  child: ImageHandler(
+                    img: ware1,
+                    width: 37.5.w,
+                    height: 37.5.w,
+                  ),
                 ),
               ),
-              SizedBox(width: context.width/50,),
-              Text("الريان فارم لتجاره وتوزيع الادويه",style: TextStyles.textStyleNormal10.copyWith(
+              SizedBox(width: 7.5.w),
+              Text(
+                "الريان فارم لتجاره وتوزيع الادويه",
+                style: TextStyles.textStyleNormal10.copyWith(
                   color: color6C6C89,
-                  fontWeight: FontWeight.w600
-              ),textScaler: TextScaler.linear(1),)
+                  fontWeight: FontWeight.w600,
+                ),
+                textScaler: TextScaler.linear(1),
+              ),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("٥٨",style: TextStyles.textStyleNormal16.copyWith(
+              Text(
+                "٥٨",
+                style: TextStyles.textStyleNormal16.copyWith(
                   color: color121217,
-                  fontWeight: FontWeight.w600
-              ),textScaler: TextScaler.linear(1),),
-              SizedBox(width: context.width/30,),
+                  fontWeight: FontWeight.w600,
+                ),
+                textScaler: TextScaler.linear(1),
+              ),
+              SizedBox(width: 12.5.w),
               Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
-                children: [ Text("جنيه مصري",style: TextStyles.textStyleNormal11.copyWith(
-                    color: color6C6C89,
-                    fontWeight: FontWeight.w400
-                ),textScaler: TextScaler.linear(1),),
-                  SizedBox(width: context.width/30,),
-                  Text("١٢٠ جنيه مصري",style: TextStyles.textStyleNormal11.copyWith(
+                children: [
+                  Text(
+                    "جنيه مصري",
+                    style: TextStyles.textStyleNormal11.copyWith(
+                      color: color6C6C89,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    textScaler: TextScaler.linear(1),
+                  ),
+                  SizedBox(width: 12.5.w),
+                  Text(
+                    "١٢٠ جنيه مصري",
+                    style: TextStyles.textStyleNormal11.copyWith(
                       color: color6C6C89,
                       decoration: TextDecoration.lineThrough,
                       decorationColor: color6C6C89,
-                      fontWeight: FontWeight.w400
-                  ),textScaler: TextScaler.linear(1),),],
+                      fontWeight: FontWeight.w400,
+                    ),
+                    textScaler: TextScaler.linear(1),
+                  ),
+                ],
               ),
               Spacer(),
 
               Container(
-                padding: EdgeInsets.symmetric(horizontal: context.width/60,
-                    vertical: context.height/70),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 6.2.w,
+                  vertical: 11.6.h,
+                ),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: colorFEF0F4,
-                    border: Border.all(
-                        color: colorFBB1C4
-                    )),
-                child: Text("خصم ٥٢٪",style: TextStyles.textStyleNormal11.copyWith(
+                  borderRadius: BorderRadius.circular(12),
+                  color: colorFEF0F4,
+                  border: Border.all(color: colorFBB1C4),
+                ),
+                child: Text(
+                  "خصم ٥٢٪",
+                  style: TextStyles.textStyleNormal11.copyWith(
                     color: colorD50B3E,
-                    fontWeight: FontWeight.w600
-                ),textScaler: TextScaler.linear(1),),
-              )
-            ],),
-
+                    fontWeight: FontWeight.w600,
+                  ),
+                  textScaler: TextScaler.linear(1),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );

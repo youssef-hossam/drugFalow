@@ -6,9 +6,10 @@ import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/images.dart';
 import '../../../../core/utils/helper.dart';
 import '../../../../core/widgets/svg_handler.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 List<Widget> buildAroundWidgets(BuildContext context) {
-  final radius = context.width / 5 / 2 + 12;
+  final radius = 75.w / 2 + 12;
 
   final widgets = [
     Container(
@@ -19,14 +20,14 @@ List<Widget> buildAroundWidgets(BuildContext context) {
       ),
       child: customSvg(
         name: garage,
-        width: context.width / 15,
-        height: context.width / 15,
+        width: 25.w,
+        height: 25.w,
         fit: BoxFit.cover,
       ),
     ),
     Container(
-      width: context.width / 18,
-      height: context.width / 18,
+      width: 20.8.w,
+      height: 20.8.w,
       decoration: BoxDecoration(
         color: colorF7F7F8,
         shape: BoxShape.circle,
@@ -41,15 +42,15 @@ List<Widget> buildAroundWidgets(BuildContext context) {
       ),
       child: customSvg(
         name: garage,
-        width: context.width / 15,
-        height: context.width / 15,
+        width: 25.w,
+        height: 25.w,
         fit: BoxFit.cover,
       ),
     ),
 
     Container(
-      width: context.width / 18,
-      height: context.width / 18,
+      width: 20.8.w,
+      height: 20.8.w,
       decoration: BoxDecoration(
         color: colorF7F7F8,
         shape: BoxShape.circle,
@@ -64,14 +65,14 @@ List<Widget> buildAroundWidgets(BuildContext context) {
       ),
       child: customSvg(
         name: garage,
-        width: context.width / 15,
-        height: context.width / 15,
+        width: 25.w,
+        height: 25.w,
         fit: BoxFit.cover,
       ),
     ),
     Container(
-      width: context.width / 18,
-      height: context.width / 18,
+      width: 20.8.w,
+      height: 20.8.w,
       decoration: BoxDecoration(
         color: colorF7F7F8,
         shape: BoxShape.circle,
@@ -86,8 +87,8 @@ List<Widget> buildAroundWidgets(BuildContext context) {
       ),
       child: customSvg(
         name: garage,
-        width: context.width / 15,
-        height: context.width / 15,
+        width: 25.w,
+        height: 25.w,
         fit: BoxFit.cover,
       ),
     ),

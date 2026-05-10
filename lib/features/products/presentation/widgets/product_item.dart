@@ -5,23 +5,24 @@ import 'package:drug_flow/core/utils/helper.dart';
 import 'package:drug_flow/core/widgets/image_handler.dart';
 import 'package:drug_flow/features/products/presentation/widgets/partition_name_item.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductItem extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: context.width/30,
-      vertical: context.height/50),
+      margin: EdgeInsets.symmetric(horizontal: 12.5.w,
+      vertical: 16.2.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: ImageHandler(img: panadol, width: context.width/3.5
-                , height: context.height/5),
+            child: ImageHandler(img: panadol, width: 107.1.w
+                , height: 162.4.h),
           ),
-          SizedBox(width: context.width/30,),
+          SizedBox(width: 12.5.w,),
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -32,23 +33,23 @@ class ProductItem extends StatelessWidget{
                 style: TextStyles.textStyleNormal13.copyWith(
                   color: color121217
                 ),textScaler: TextScaler.linear(1),),
-                SizedBox(height: context.height/50,),
+                SizedBox(height: 16.2.h,),
                 Text("اسم القسم",style: TextStyles.textStyleNormal11.copyWith(
                   color: color6C6C89
                 ),textScaler: TextScaler.linear(1),),
-                SizedBox(height: context.height/90,),
+                SizedBox(height: 9.h,),
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     PartitionNameItem(title: "Paracetamol"),
-                    SizedBox(width: context.width/30,),
+                    SizedBox(width: 12.5.w,),
                     PartitionNameItem(title: "Caffeine"),
 
                   ],
                 ),
-                SizedBox(height: context.height/150,),
+                SizedBox(height: 5.4.h,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -65,10 +66,10 @@ class ProductItem extends StatelessWidget{
                       alignment: Alignment.center,
                       child: ClipOval(
                         child: ImageHandler(img: ware1
-                            , width: context.width/10, height: context.width/10),
+                            , width: 37.5.w, height: 37.5.w),
                       ),
                     ),
-                    SizedBox(width: context.width/50,),
+                    SizedBox(width: 7.5.w,),
                     Text("الريان فارم لتجاره وتوزيع الادويه",style: TextStyles.textStyleNormal10.copyWith(
                       color: color6C6C89,
                       fontWeight: FontWeight.w600
@@ -83,7 +84,7 @@ class ProductItem extends StatelessWidget{
                       color: color121217,
                       fontWeight: FontWeight.w600
                     ),textScaler: TextScaler.linear(1),),
-                    SizedBox(width: context.width/30,),
+                    SizedBox(width: 12.5.w,),
                     Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,7 +93,7 @@ class ProductItem extends StatelessWidget{
                           color: color6C6C89,
                           fontWeight: FontWeight.w400
                       ),textScaler: TextScaler.linear(1),),
-                        SizedBox(width: context.width/30,),
+                        SizedBox(width: 12.5.w,),
                         Text("١٢٠ جنيه مصري",style: TextStyles.textStyleNormal11.copyWith(
                             color: color6C6C89,
                             decoration: TextDecoration.lineThrough,
@@ -103,8 +104,8 @@ class ProductItem extends StatelessWidget{
                     Spacer(),
 
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: context.width/60,
-                          vertical: context.height/70),
+                      padding: EdgeInsets.symmetric(horizontal: 6.2.w,
+                          vertical: 11.6.h),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           color: colorFEF0F4,

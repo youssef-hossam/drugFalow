@@ -13,6 +13,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../core/constants/styles.dart';
 import '../../../../core/widgets/silver_grid_delegate_with_fixed_axis_count/silver_grid_delegate_with_fixed_axis_count.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatefulWidget{
   const HomeScreen({super.key});
@@ -31,35 +32,35 @@ class _HomeScreenState extends State<HomeScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: context.height/70,),
+          SizedBox(height: 11.6.h,),
           SearchFieldTxt(searchController: searchController),
-          SizedBox(height: context.height/120,),
+          SizedBox(height: 6.8.h,),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: context.width/30),
+            margin: EdgeInsets.symmetric(horizontal: 12.5.w),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: ImageHandler(img: upscale, width: double.infinity
-                  , height: context.height/5),
+                  , height: 162.4.h),
             ),
           ),
-      SizedBox(height: context.height/90,),
+      SizedBox(height: 9.h,),
       Center(
         child: SmoothPageIndicator(
             textDirection: ui.TextDirection.ltr,
             effect: ExpandingDotsEffect(
                 spacing: 8.0,
                 radius: 20.0,
-                dotWidth: context.width/60,
-                dotHeight: context.width/60,
+                dotWidth: 6.2.w,
+                dotHeight: 6.2.w,
                 activeDotColor: color97C3D0,
 
                 dotColor:colorCCE5EC),
             controller: PageController(initialPage: 0,),
             count: 3),
       ),
-          SizedBox(height: context.height/40,),
+          SizedBox(height: 20.3.h,),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: context.width/30),
+            margin: EdgeInsets.symmetric(horizontal: 12.5.w),
             child: Text("جميع المخازن",style: TextStyles.textStyleNormal14.copyWith(
               color: color121217,
               fontWeight: FontWeight.w600
@@ -67,15 +68,15 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Expanded(child: GridView.builder(
             padding: EdgeInsets.symmetric(
-                vertical: context.height/60,
-                horizontal: context.width/30),
+                vertical: 13.5.h,
+                horizontal: 12.5.w),
               itemCount: 21,
               shrinkWrap: true,
 
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCountAndFixedHeight(
-                  height: context.height/5,
-                  crossAxisSpacing: context.width/70,
-                  mainAxisSpacing: context.height/50,
+                  height: 162.4.h,
+                  crossAxisSpacing: 5.4.w,
+                  mainAxisSpacing: 16.2.h,
                   crossAxisCount: 3)
               , itemBuilder: (context,index)=>WareHousesItem()))
         ],

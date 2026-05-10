@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/styles.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TermsConditionsWidget extends StatelessWidget{
 
@@ -32,7 +33,7 @@ class TermsConditionsWidget extends StatelessWidget{
           },
         ),
 
-    SizedBox(width: context.width/70),
+    SizedBox(width: 5.4.w),
 Row(
   mainAxisAlignment: MainAxisAlignment.start,
   crossAxisAlignment: CrossAxisAlignment.center,

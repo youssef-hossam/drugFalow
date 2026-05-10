@@ -6,39 +6,42 @@ import 'package:drug_flow/core/widgets/svg_handler.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/styles.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-AppBar homeAppBar({BuildContext? context}){
+AppBar homeAppBar({BuildContext? context}) {
   return AppBar(
     backgroundColor: white,
     surfaceTintColor: white,
     elevation: 0,
     foregroundColor: white,
     leading: InkWell(
-      onTap: (){},
+      onTap: () {},
       child: Container(
         alignment: Alignment.center,
-        child: customSvg(name: notification,width: context!.width/29,
-        height: context.height/29,fit: BoxFit.cover),
+        child: customSvg(
+          name: notification,
+          width: 28.w,
+          height: 28.h,
+          fit: BoxFit.cover,
+        ),
       ),
     ),
     actions: [
-      SizedBox(width: context.width/30,),
+      SizedBox(width: 12.5.w),
       Container(
-        width: context.width/7,
-        height: context.width/7,
+        width: 53.6.w,
+        height: 53.6.w,
         alignment: Alignment.center,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: primaryDark
-        ),
-        child:  ImageHandler(img: profile, width: context!.width/9,
-              height: context.width/9),),
-      SizedBox(width: context.width/70,),
-      Text("درج فلو",
-        style: TextStyles.textStyleBold20.copyWith(
-            color: primaryDark
-        ),textScaler: TextScaler.linear(1),),
-      SizedBox(width: context.width/30,),
+        decoration: BoxDecoration(shape: BoxShape.circle, color: primaryDark),
+        child: ImageHandler(img: profile, width: 41.7.w, height: 41.7.w),
+      ),
+      SizedBox(width: 5.4.w),
+      Text(
+        "درج فلو",
+        style: TextStyles.textStyleBold20.copyWith(color: primaryDark),
+        textScaler: TextScaler.linear(1),
+      ),
+      SizedBox(width: 12.5.w),
     ],
   );
 }

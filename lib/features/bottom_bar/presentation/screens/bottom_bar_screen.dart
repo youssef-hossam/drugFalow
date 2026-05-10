@@ -7,6 +7,7 @@ import "package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart";
 
 import '../../../../core/constants/colors.dart';
 import '../widgets/nav_bar_items.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BottomBarScreen extends StatefulWidget {
   @override
@@ -64,13 +65,12 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
             animateTabTransition: true,
 
             duration: Duration(milliseconds: 250),
-            screenTransitionAnimationType:
-            ScreenTransitionAnimationType.slide,
+            screenTransitionAnimationType: ScreenTransitionAnimationType.slide,
           ),
         ),
 
         confineToSafeArea: true,
-        navBarHeight: context.height/9.5,
+        navBarHeight: 85.5.h,
 
         navBarStyle: NavBarStyle.style10,
       ),

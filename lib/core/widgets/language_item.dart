@@ -8,6 +8,7 @@ import '../constants/fonts.dart';
 import '../constants/images.dart';
 import '../constants/styles.dart';
 import '../utils/helper.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /*class LanguageItem extends StatelessWidget{
   Color? color;
@@ -33,8 +34,8 @@ import '../utils/helper.dart';
 
     },
     child: Container(
-        margin: EdgeInsets.symmetric(horizontal: context.width/30),
-        padding: EdgeInsets.all(context.width/70),
+        margin: EdgeInsets.symmetric(horizontal: 12.5.w),
+        padding: EdgeInsets.all(5.4.w),
         decoration: BoxDecoration(
           border: Border.all(color: color!,width: 1),
           borderRadius: BorderRadius.all(Radius.circular(8)),
@@ -44,9 +45,9 @@ import '../utils/helper.dart';
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            customSvg(name: languageIcon,width: context.width/30,height: context.height/30
+            customSvg(name: languageIcon,width: 12.5.w,height: 27.1.h
                 ,fit: BoxFit.cover,color: color!),
-            SizedBox(width: context.width/40,),
+            SizedBox(width: 9.4.w,),
             Text(context.locale.languageCode == "en"?
             "العربية" : "English",style: TextStyles.textStyleNormal16.copyWith(
                 color: color!,fontWeight: FontWeight.w500,

@@ -1,4 +1,5 @@
 import 'package:drug_flow/core/constants/images.dart';
+import 'package:drug_flow/core/constants/styles.dart';
 import 'package:drug_flow/features/onboarding/presentation/widgets/onboarding_app_bar.dart';
 import 'package:drug_flow/features/onboarding/presentation/widgets/onboarding_description_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -15,6 +16,7 @@ import '../../../../core/widgets/custom_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../domain/entities/onboarding_data.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -25,76 +27,67 @@ class OnBoardingScreen extends StatefulWidget {
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   List<String> images = [onboarding, onboarding2, onboarding3];
-  List<OnboardingData> onBoardingList = [
+  List<OnboardingData> get onBoardingList => [
     OnboardingData(
-      title: "كل مخازن الأدوية في مكان واحد",
-      description:
-          "تصفح مئات المنتجات من أكثر من مخزن، وقارن الأسعار واختر الأنسب لصيدليتك بضغطة واحدة",
+      title: tr("onboarding_title_1"),
+      description: tr("onboarding_desc_1"),
     ),
     OnboardingData(
-      title: "طلب واحد، موردين متعددين",
-      description:
-          "أضف منتجات من مخازن مختلفة في سلة واحدة، ووفّر وقتك وجهدك في إدارة المشتريات اليومية",
+      title: tr("onboarding_title_2"),
+      description: tr("onboarding_desc_2"),
     ),
     OnboardingData(
-      title: "خصومات حصرية ومتابعة لحظية",
-      description:
-          "استفد من كوبونات الخصم المتاحة، وتابع حالة طلباتك من لحظة التأكيد حتى التسليم.",
+      title: tr("onboarding_title_3"),
+      description: tr("onboarding_desc_3"),
     ),
   ];
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: white,
-        body: Column(
+    return Scaffold(
+      backgroundColor: white,
+      body: Padding(
+        padding: EdgeInsets.only(top: 27.h),
+        child: Column(
           children: [
-            SizedBox(height: context.height / 40),
+            SizedBox(height: 20.3.h),
             OnboardingAppBar(),
-            SizedBox(height: context.height / 60),
+            SizedBox(height: 13.5.h),
             Expanded(
               child: BlocBuilder<OnboardingCubit, OnboardingState>(
                 builder: (context, state) {
-                  return SafeArea(
-                    top: true,
-                    bottom: false,
-                    child: PageView(
-                      controller: context.read<OnboardingCubit>().controller,
-                      padEnds: false,
-                      physics: const BouncingScrollPhysics(),
-                      scrollDirection: Axis.horizontal,
+                  return PageView(
+                    controller: context.read<OnboardingCubit>().controller,
+                    padEnds: false,
+                    physics: const BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
 
-                      onPageChanged: (pageInd) {
-                        context.read<OnboardingCubit>().onPageIndex(
-                          ind: pageInd,
-                        );
-                      },
+                    onPageChanged: (pageInd) {
+                      context.read<OnboardingCubit>().onPageIndex(ind: pageInd);
+                    },
 
-                      allowImplicitScrolling: true,
+                    allowImplicitScrolling: true,
 
-                      children: images.map((i) {
-                        return OnBoardingFirst(img: i);
-                      }).toList(),
-                    ),
+                    children: images.map((i) {
+                      return OnBoardingFirst(img: i);
+                    }).toList(),
                   );
                 },
               ),
             ),
 
-            SizedBox(height: context.height / 30),
+            SizedBox(height: 10.h),
             BlocBuilder<OnboardingCubit, OnboardingState>(
               builder: (context, state) {
                 return OnboardingDescriptionWidget(
-                  title:
-                      onBoardingList[context.read<OnboardingCubit>().pageInd!]
-                          .title,
+                  title: onBoardingList[context.read<OnboardingCubit>().pageInd]
+                      .title,
                   description:
-                      onBoardingList[context.read<OnboardingCubit>().pageInd!]
+                      onBoardingList[context.read<OnboardingCubit>().pageInd]
                           .description,
                 );
               },
             ),
-            SizedBox(height: context.height / 60),
+            SizedBox(height: 10.h),
             BlocBuilder<OnboardingCubit, OnboardingState>(
               builder: (context, state) {
                 return SmoothPageIndicator(
@@ -102,8 +95,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   effect: ExpandingDotsEffect(
                     spacing: 8.0,
                     radius: 20.0,
-                    dotWidth: context.width / 60,
-                    dotHeight: context.width / 60,
+                    dotWidth: 6.2.w,
+                    dotHeight: 6.2.w,
                     activeDotColor: color97C3D0,
 
                     dotColor: colorCCE5EC,
@@ -113,13 +106,39 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 );
               },
             ),
-            SizedBox(height: context.height / 20),
+            BlocBuilder<OnboardingCubit, OnboardingState>(
+              builder: (context, state) {
+                return AnimatedOpacity(
+                  opacity: context.read<OnboardingCubit>().pageInd == 2 ? 1 : 0,
+                  duration: Duration(milliseconds: 300),
+                  child: Column(
+                    children: [
+                      SizedBox(height: 40.h),
+
+                      Container(
+                        width: double.infinity,
+                        margin: EdgeInsets.only(left: 16.w, right: 16.w),
+                        child: CustomButton(
+                          color: Colors.transparent,
+                          btnTitle: tr("register"),
+                          style: TextStyles.textStyleNormal14,
+                          borderSide: BorderSide(color: colorD1d1dB, width: 1),
+                          onPressed: () async {
+                            context.push(registerSc);
+                          },
+
+                          type: '',
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+            SizedBox(height: 16.h),
             Container(
               width: double.infinity,
-              margin: EdgeInsets.only(
-                left: context.width / 23.4375,
-                right: context.width / 23.4375,
-              ),
+              margin: EdgeInsets.only(left: 16.w, right: 16.w),
               child: BlocBuilder<OnboardingCubit, OnboardingState>(
                 builder: (context, state) {
                   final cubit = context.read<OnboardingCubit>();
@@ -127,7 +146,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
                   return CustomButton(
                     btnTitle: isLastPage ? tr("login") : tr("next"),
-
+                    isNextButton: !isLastPage,
                     onPressed: () async {
                       if (isLastPage) {
                         context.push(loginSc);
@@ -141,8 +160,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 },
               ),
             ),
-
-            SizedBox(height: context.height / 30),
+            SizedBox(height: 16.h),
           ],
         ),
       ),

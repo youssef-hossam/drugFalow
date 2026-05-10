@@ -3,6 +3,7 @@ import 'package:drug_flow/core/constants/styles.dart';
 import 'package:drug_flow/core/utils/helper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CounterItem extends StatelessWidget{
   @override
@@ -19,12 +20,12 @@ class CounterItem extends StatelessWidget{
         children: [
           IconButton(onPressed: (){}, icon: Icon(Icons.add,
           color: color8A8AA3,)),
-          SizedBox(width: context.width/100,),
+          SizedBox(width: 3.8.w,),
           Text("٢",style: TextStyles.textStyleNormal14.copyWith(
             color: color121217,
             fontWeight: FontWeight.w600
           ),textScaler: TextScaler.linear(1),),
-          SizedBox(width: context.width/100,),
+          SizedBox(width: 3.8.w,),
           IconButton(onPressed: (){}, icon: Icon(Icons.remove,
             color: color8A8AA3,)),
         ],

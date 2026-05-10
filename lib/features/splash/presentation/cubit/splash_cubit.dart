@@ -9,7 +9,7 @@ class SplashCubit extends Cubit<SplashState> {
 
   Future<void> setSplash({BuildContext? context}) async {
     Future.delayed(Duration(seconds: 4), () {
-      context?.push(onboardingSc);
+      context?.pushReplacement(onboardingSc);
     });
   }
 }

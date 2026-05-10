@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:drug_flow/core/constants/screens.dart';
 import 'package:drug_flow/features/auth/presentation/cubit/login/login_cubit.dart';
 import 'package:drug_flow/features/auth/presentation/cubit/register/register_cubit.dart';
@@ -24,9 +25,15 @@ final GoRouter router = GoRouter(
         path: splash,
         pageBuilder: (context, state) => CustomTransitionPage(
           key: state.pageKey,
-          child: BlocProvider(
-            create: (context) => SplashCubit(),
-            child: SplashScreen(),),
+          child: Builder(
+            builder: (context) {
+              context.locale;
+              return BlocProvider(
+                create: (context) => SplashCubit(),
+                child: SplashScreen(),
+              );
+            }
+          ),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(
               opacity: animation,
@@ -39,10 +46,15 @@ final GoRouter router = GoRouter(
         path: onboardingSc,
         pageBuilder: (context, state) => CustomTransitionPage(
           key: state.pageKey,
-          child: BlocProvider(
-            create: (context) => sl<OnboardingCubit>(),
-            child: OnBoardingScreen(),
-),
+          child: Builder(
+            builder: (context) {
+              context.locale;
+              return BlocProvider(
+                create: (context) => sl<OnboardingCubit>(),
+                child: OnBoardingScreen(),
+              );
+            }
+          ),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(
               opacity: animation,
@@ -55,9 +67,14 @@ final GoRouter router = GoRouter(
         path: loginSc,
         pageBuilder: (context, state) => CustomTransitionPage(
           key: state.pageKey,
-          child: BlocProvider(
-            create: (context) => sl<LoginCubit>(),
-            child: LoginScreen(),
+          child: Builder(
+            builder: (context) {
+              context.locale;
+              return BlocProvider(
+                create: (context) => sl<LoginCubit>(),
+                child: LoginScreen(),
+              );
+            }
           ),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(
@@ -71,9 +88,14 @@ final GoRouter router = GoRouter(
         path: bottomBarSc,
         pageBuilder: (context, state) => CustomTransitionPage(
           key: state.pageKey,
-          child: BlocProvider(
-            create: (context) => sl<BottomBarCubit>(),
-            child: BottomBarScreen(),
+          child: Builder(
+            builder: (context) {
+              context.locale;
+              return BlocProvider(
+                create: (context) => sl<BottomBarCubit>(),
+                child: BottomBarScreen(),
+              );
+            }
           ),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(

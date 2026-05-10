@@ -2,6 +2,7 @@ import 'package:drug_flow/core/constants/colors.dart';
 import 'package:drug_flow/core/constants/styles.dart';
 import 'package:drug_flow/core/utils/helper.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductsFilterItem extends StatelessWidget{
   final String title;
@@ -13,9 +14,9 @@ class ProductsFilterItem extends StatelessWidget{
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      height: context.height/15,
-      padding: EdgeInsets.symmetric(horizontal: context.width/20,
-          vertical: context.height/50),
+      height: 54.1.h,
+      padding: EdgeInsets.symmetric(horizontal: 18.8.w,
+          vertical: 16.2.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         border: Border.all(

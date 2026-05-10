@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'injection_container/injection_container.dart' as di;
 import 'core/constants/colors.dart';
@@ -29,34 +30,41 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: router, // <-- your GoRouter instance
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return MaterialApp.router(
+          routerConfig: router, // <-- your GoRouter instance
 
-      scaffoldMessengerKey: msgKey,
+          scaffoldMessengerKey: msgKey,
 
-      debugShowCheckedModeBanner: false,
+          debugShowCheckedModeBanner: false,
 
-      locale: context.locale,
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
+          locale: context.locale,
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
 
-      // ❌ REMOVE THIS (GoRouter handles navigation)
-      // navigatorKey: navKey,
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.transparent,
-          systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: Colors.transparent,
-            statusBarIconBrightness: Brightness.light,
-            statusBarBrightness: Brightness.light,
+          // ❌ REMOVE THIS (GoRouter handles navigation)
+          // navigatorKey: navKey,
+          theme: ThemeData(
+            appBarTheme: const AppBarTheme(
+              backgroundColor: Colors.transparent,
+              systemOverlayStyle: SystemUiOverlayStyle(
+                statusBarColor: Colors.transparent,
+                statusBarIconBrightness: Brightness.light,
+                statusBarBrightness: Brightness.light,
+              ),
+            ),
+            bottomSheetTheme: const BottomSheetThemeData(
+              constraints: BoxConstraints(maxWidth: double.infinity),
+            ),
+
+            colorScheme: ColorScheme.fromSeed(seedColor: white),
           ),
-        ),
-        bottomSheetTheme: const BottomSheetThemeData(
-          constraints: BoxConstraints(maxWidth: double.infinity),
-        ),
-
-        colorScheme: ColorScheme.fromSeed(seedColor: white),
-      ),
+        );
+      },
     );
   }
 }

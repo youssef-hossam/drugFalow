@@ -8,6 +8,7 @@ import '../../../../core/constants/images.dart';
 import '../../../../core/constants/styles.dart';
 import '../../../../core/utils/helper.dart';
 import '../../../../core/widgets/image_handler.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CurrentRequestCartItem extends StatefulWidget{
   const CurrentRequestCartItem({super.key});
@@ -21,8 +22,8 @@ class _CurrentRequestCartItemState extends State<CurrentRequestCartItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: context.height/50,
-      horizontal: context.width/40),
+      margin: EdgeInsets.symmetric(vertical: 16.2.h,
+      horizontal: 9.4.w),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,10 +45,10 @@ class _CurrentRequestCartItemState extends State<CurrentRequestCartItem> {
                 alignment: Alignment.center,
                 child: ClipOval(
                   child: ImageHandler(img: ware1
-                      , width: context.width/10, height: context.width/10),
+                      , width: 37.5.w, height: 37.5.w),
                 ),
               ),
-              SizedBox(width: context.width/60,),
+              SizedBox(width: 6.2.w,),
               Text("الريان فارم لتجاره وتوزيع الادويه",style: TextStyles.textStyleNormal10.copyWith(
                   color: color121217,
                   fontWeight: FontWeight.w600
@@ -55,18 +56,18 @@ class _CurrentRequestCartItemState extends State<CurrentRequestCartItem> {
             ],
           ),
       Container(
-        margin: EdgeInsets.symmetric(horizontal: context.width/30,
-            vertical: context.height/50),
+        margin: EdgeInsets.symmetric(horizontal: 12.5.w,
+            vertical: 16.2.h),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: ImageHandler(img: panadol, width: context.width/3.5
-                  , height: context.height/5),
+              child: ImageHandler(img: panadol, width: 107.1.w
+                  , height: 162.4.h),
             ),
-            SizedBox(width: context.width/30,),
+            SizedBox(width: 12.5.w,),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -77,7 +78,7 @@ class _CurrentRequestCartItemState extends State<CurrentRequestCartItem> {
                     style: TextStyles.textStyleNormal13.copyWith(
                         color: color121217
                     ),textScaler: TextScaler.linear(1),),
-                  SizedBox(height: context.height/90,),
+                  SizedBox(height: 9.h,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -86,7 +87,7 @@ class _CurrentRequestCartItemState extends State<CurrentRequestCartItem> {
                           color: color121217,
                           fontWeight: FontWeight.w600
                       ),textScaler: TextScaler.linear(1),),
-                      SizedBox(width: context.width/30,),
+                      SizedBox(width: 12.5.w,),
                       Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,7 +96,7 @@ class _CurrentRequestCartItemState extends State<CurrentRequestCartItem> {
                             color: color6C6C89,
                             fontWeight: FontWeight.w400
                         ),textScaler: TextScaler.linear(1),),
-                          SizedBox(width: context.width/30,),
+                          SizedBox(width: 12.5.w,),
                           Text("١٢٠ جنيه مصري",style: TextStyles.textStyleNormal11.copyWith(
                               color: color6C6C89,
                               decoration: TextDecoration.lineThrough,
@@ -106,8 +107,8 @@ class _CurrentRequestCartItemState extends State<CurrentRequestCartItem> {
                       Spacer(),
 
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: context.width/60,
-                            vertical: context.height/70),
+                        padding: EdgeInsets.symmetric(horizontal: 6.2.w,
+                            vertical: 11.6.h),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
                             color: colorFEF0F4,
@@ -120,13 +121,13 @@ class _CurrentRequestCartItemState extends State<CurrentRequestCartItem> {
                         ),textScaler: TextScaler.linear(1),),
                       )
                     ],),
-                  SizedBox(height: context.height/40,),
+                  SizedBox(height: 20.3.h,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CounterItem(),
                       SizedBox(
-                        width: context.width/6.8,
+                        width: 55.1.w,
                         child: CustomButton(btnTitle: "نقـل", onPressed:(){},
                         color: primaryDark,),
                       )
@@ -139,17 +140,17 @@ class _CurrentRequestCartItemState extends State<CurrentRequestCartItem> {
           ],
         ),),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: context.width/30),
+            margin: EdgeInsets.symmetric(horizontal: 12.5.w),
             child: Text("ملخص الطلب",style: TextStyles.textStyleNormal16.copyWith(
               color: color121217,
               fontWeight: FontWeight.w600
             ),textScaler: TextScaler.linear(1),),
           ),
-          SizedBox(height: context.height/120,),
+          SizedBox(height: 6.8.h,),
           CouponCodeText(couponCodeController: couponCodeController),
-          SizedBox(height: context.height/90,),
+          SizedBox(height: 9.h,),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: context.width/30),
+            margin: EdgeInsets.symmetric(horizontal: 12.5.w),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -167,9 +168,9 @@ class _CurrentRequestCartItemState extends State<CurrentRequestCartItem> {
               ],
             ),
           ),
-          SizedBox(height: context.height/90,),
+          SizedBox(height: 9.h,),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: context.width/30),
+            margin: EdgeInsets.symmetric(horizontal: 12.5.w),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -186,9 +187,9 @@ class _CurrentRequestCartItemState extends State<CurrentRequestCartItem> {
 
               ],
             ),),
-          SizedBox(height: context.height/60,),
+          SizedBox(height: 13.5.h,),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: context.width/30),
+            margin: EdgeInsets.symmetric(horizontal: 12.5.w),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,

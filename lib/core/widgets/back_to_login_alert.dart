@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../constants/colors.dart';
 import '../constants/images.dart';
 import '../utils/helper.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 /*class BackToLoginAlert extends StatefulWidget {
@@ -51,7 +52,7 @@ class BackToLogin extends StatelessWidget {
       children: [
         Container(
           // height: 200.h,
-          width: context.width / 1.5,
+          width: 250.w,
           decoration:  BoxDecoration(
               color: color1F3D2B,
               borderRadius: BorderRadius.all(Radius.circular(15))),
@@ -61,8 +62,8 @@ class BackToLogin extends StatelessWidget {
             // crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
-              customSvg(name: favourite,width: context.width/19
-                ,height: context.width/19,color: white),
+              customSvg(name: favourite,width: 19.7.w
+                ,height: 19.7.w,color: white),
               GestureDetector(
                 onTap: () {
                //   Navigation.push(context, screen: LoginScreen());
@@ -70,8 +71,8 @@ class BackToLogin extends StatelessWidget {
                   //     popTill: "CartScreen");
                 },
                 child: Container(
-                  width: context.width/2,
-                  height: context.height/10,
+                  width: 187.5.w,
+                  height: 81.2.h,
                   decoration: BoxDecoration(
                       color: color73, borderRadius: BorderRadius.circular(8)),
                   child: Center(
